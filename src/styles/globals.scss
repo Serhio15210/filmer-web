@@ -1,0 +1,62 @@
+@use "reset.css";
+@use "variables";
+@use "media-queryes";
+html,
+body {
+  min-height: 100svh;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: variables.$black;
+  display: flex;
+  margin: 0 auto;
+  max-width: 100vw;
+  width: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  overflow-y: hidden;
+  color: variables.$white;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+button,input{
+  border: none;
+  background: none;
+
+
+}
+button{
+  cursor: pointer;
+}
+input{
+
+  &:focus{
+    outline: none;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+h1,h2,p{
+  margin: 0;
+}

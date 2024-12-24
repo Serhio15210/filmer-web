@@ -1,3 +1,63 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "prettier"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "import/order": "off",
+    "curly": "error",
+    "array-callback-return": "error",
+    "capitalized-comments": [
+      "error",
+      "never",
+      {
+        "ignorePattern": "TODO"
+      }
+    ],
+    "eqeqeq": "error",
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "func-style": "error",
+    "no-bitwise": "error",
+    "no-eq-null": "error",
+    "no-lonely-if": "error",
+    "no-negated-condition": "warn",
+    "no-param-reassign": "error",
+    "no-plusplus": "error",
+    "no-return-assign": "error",
+    "no-return-await": "error",
+    "no-useless-concat": "error",
+    "object-shorthand": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-object-spread": "error",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "spaced-comment": "error",
+    "no-nested-ternary": "off",
+    "no-else-return": "error",
+    "no-console": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "unicorn/expiring-todo-comments": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/no-array-callback-reference": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/new-for-builtins": "off",
+    "unicorn/no-null": "off",
+    "unicorn/prefer-module": "off",
+    "unicorn/prefer-node-protocol": "off",
+    "unicorn/numeric-separators-style": "off",
+    "@typescript-eslint/no-shadow": "off"
+  }
 }

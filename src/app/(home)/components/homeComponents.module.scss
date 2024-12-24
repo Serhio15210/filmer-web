@@ -1,0 +1,80 @@
+@use "@/styles/variables";
+@use "@/styles/media-queryes";
+.listContainer {
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  .content{
+    display: grid;
+    width: 100%;
+    grid-template-columns:  minmax(50%, 1fr) minmax(auto, 1fr) minmax(auto, 1fr);
+    gap: 20px;
+
+    .info{
+      width: 100%;
+      height: 30%;
+      bottom: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,1) 45%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 20px;
+      position: absolute;
+      z-index: 3;
+
+      transition: all variables.$fast ease;
+
+
+      p{
+        opacity: 0;
+        transform: translateY(+50%);
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: all variables.$fast ease;
+      }
+    }
+    .bigBox,.smallBox{
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      &:hover .info{
+        height: 100%;
+
+        p{
+          transform: translateY(0);
+          opacity: 1;
+
+        }
+      }
+    }
+    .bigBox {
+
+      grid-area: span 2;
+    }
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+
+    }
+    @include media-queryes.tablet{
+      grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+    }
+    @include media-queryes.mobile{
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      .bigBox{
+        grid-column: span 2;
+      }
+    }
+  }
+
+}

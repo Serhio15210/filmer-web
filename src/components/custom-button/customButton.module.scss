@@ -1,0 +1,21 @@
+@use "@/styles/variables";
+.customBtn{
+  background: variables.$sand;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: variables.$white;
+  border-radius: 20px;
+  font-size: 24px;
+  transition: box-shadow,scale variables.$fast ease;
+  text-shadow: 2px 1px variables.$gray ;
+  &:active{
+    box-shadow: variables.$shadow;
+  }
+  &:hover{
+    scale: 1.05;
+  }
+}

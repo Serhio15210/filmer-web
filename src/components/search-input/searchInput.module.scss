@@ -1,0 +1,24 @@
+@use "@/styles/variables";
+@use "@/styles/media-queryes";
+.searchForm{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  width: clamp(200px, 50%, 800px);
+  position: relative;
+  input{
+    flex: 1;
+    background: variables.$gray;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: variables.$shadow;
+    color: variables.$white;
+  }
+  button{
+    position: absolute;
+    right: 10px;
+  }
+
+}

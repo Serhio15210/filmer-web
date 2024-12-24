@@ -1,0 +1,32 @@
+@use "@/styles/variables";
+@use "@/styles/media-queryes";
+
+.menuContainer {
+  height: 100%;
+  flex-basis: 50px;
+  background: variables.$black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: flex-basis variables.$fast ease-in-out;
+  position: relative;
+
+  p {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity variables.$fast ease !important;
+  }
+
+  &.active {
+    flex-basis: 250px;
+
+    p {
+      opacity: 1;
+
+    }
+  }
+
+  @include media-queryes.mobile {
+    display: none;
+  }
+}

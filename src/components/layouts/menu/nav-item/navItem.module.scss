@@ -1,0 +1,143 @@
+@use "@/styles/variables";
+@use "@/styles/media-queryes";
+
+.navItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 0 10px 10px 0;
+  background-color: variables.$black;
+  transition: background-color variables.$normal ease;
+  flex: 1;
+  //overflow: hidden;
+  & > * {
+    position: relative;
+    z-index: 3;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    background: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all variables.$fast ease-out;
+    z-index: 2;
+
+  }
+
+  &::before {
+    top: -20px;
+    box-shadow: 0 0 0 0 variables.$sand;
+    //box-shadow: 0 0 0 0 transparent;
+    border-radius: 0 0 0 100vw;
+  }
+
+  &::after {
+    bottom: -20px;
+    box-shadow: 0 0 0 0 variables.$sand;
+    //box-shadow: 0 0 0 0 transparent;
+    border-radius: 100vw 0 0 0;
+  }
+
+
+  p {
+    position: absolute;
+    left: 50px;
+    color: variables.$gray;
+    //visibility: hidden;
+    transition: color variables.$fast ease;
+    white-space: nowrap;
+  }
+
+  svg {
+    path {
+      fill: variables.$gray;
+      transition: fill variables.$fast ease;
+    }
+  }
+
+  .activePage {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, black 5%,#C2B280 1%, black 95%);
+    transition: all variables.$fast ease;
+    z-index: 1;
+    border-radius: 0 10px 10px 0;
+  }
+
+  &:hover,&.active {
+    //background-color: variables.$sand;
+    &::before,&::after{
+      opacity: 1;
+    }
+    &::before {
+      box-shadow: -15px 25px 0 15px variables.$sand;
+    }
+
+    &::after {
+      box-shadow: -15px -25px 0 15px variables.$sand;
+    }
+
+    p {
+      //visibility: visible;
+      color: variables.$white;
+    }
+
+    svg {
+      path {
+        fill: variables.$white;
+      }
+    }
+
+    .activePage {
+
+      width: 100%;
+      background: variables.$sand;
+    }
+  }
+
+}
+.mobileItem{
+  box-shadow: variables.$shadow;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  svg{
+    width: 20px;
+    height: 20px;
+    path{
+      fill: variables.$white;
+    }
+  }
+  p{
+    color: variables.$white;
+    font-size: clamp(18px,50%,24px);
+  }
+  &.active{
+    p{
+      color: variables.$sand;
+    }
+    svg{
+      path{
+        fill: variables.$sand;
+      }
+    }
+  }
+}
+
